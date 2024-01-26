@@ -13,8 +13,14 @@ config_version=5
 config/name="malagajam17-2024"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=30
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 0)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[debug]
+
+canvas_items/debug_redraw_color=Color(1, 0.2, 0.2, 0.501961)
 
 [display]
 
@@ -22,6 +28,7 @@ window/size/viewport_width=500
 window/size/viewport_height=600
 window/size/always_on_top=true
 window/size/transparent=true
+window/stretch/mode="viewport"
 window/per_pixel_transparency/allowed=true
 
 [rendering]
