@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc2uxg0f8xtlv"]
+
+[ext_resource type="Script" path="res://scenes/drag_window.gd" id="1_6xk3g"]
+[ext_resource type="Texture2D" uid="uid://co23j6v2y71vg" path="res://art/Screen.png" id="1_plqb4"]
+[ext_resource type="Texture2D" uid="uid://cei0m85yv5wys" path="res://art/Body.png" id="2_lv3vw"]
+[ext_resource type="Texture2D" uid="uid://dr70k252vnvgn" path="res://art/ButtonReleased.png" id="3_o1wkp"]
+[ext_resource type="Texture2D" uid="uid://cvqdgurgg1hkw" path="res://art/ButtonPressed.png" id="4_yorv4"]
+[ext_resource type="Texture2D" uid="uid://df7ham40ijue7" path="res://art/resize.png" id="6_xv50p"]
+[ext_resource type="Script" path="res://Scripts/resize.gd" id="7_ci1wg"]
+
+[node name="Window" type="Window"]
+size = Vector2i(500, 600)
+borderless = true
+transparent = true
+mouse_passthrough = true
+max_size = Vector2i(500, 600)
+
+[node name="world" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6xk3g")
+
+[node name="Panel" type="Panel" parent="world"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 77.0
+offset_top = 136.0
+offset_right = 432.0
+offset_bottom = 422.0
+
+[node name="GridContainer" type="GridContainer" parent="world/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screen" type="Sprite2D" parent="world"]
+position = Vector2(254, 278)
+texture = ExtResource("1_plqb4")
+
+[node name="Body" type="Sprite2D" parent="world"]
+position = Vector2(252, 297)
+texture = ExtResource("2_lv3vw")
+
+[node name="Select" type="TextureButton" parent="world"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 440.0
+offset_right = 174.0
+offset_bottom = 527.0
+texture_normal = ExtResource("3_o1wkp")
+texture_pressed = ExtResource("4_yorv4")
+
+[node name="Confirm" type="TextureButton" parent="world"]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 471.0
+offset_right = 293.0
+offset_bottom = 558.0
+texture_normal = ExtResource("3_o1wkp")
+texture_pressed = ExtResource("4_yorv4")
+
+[node name="Cancel" type="TextureButton" parent="world"]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 440.0
+offset_right = 409.0
+offset_bottom = 527.0
+texture_normal = ExtResource("3_o1wkp")
+texture_pressed = ExtResource("4_yorv4")
+
+[node name="TextureButton" type="TextureButton" parent="world"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_bottom = 55.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("6_xv50p")
+script = ExtResource("7_ci1wg")

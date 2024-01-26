@@ -11,5 +11,20 @@ config_version=5
 [application]
 
 config/name="malagajam17-2024"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 0)
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=500
+window/size/viewport_height=600
+window/size/always_on_top=true
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(1, 0.301961, 0.301961, 0)
+viewport/transparent_background=true
