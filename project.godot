@@ -31,7 +31,14 @@ window/size/transparent=true
 window/stretch/mode="viewport"
 window/per_pixel_transparency/allowed=true
 
+[input]
+
+LeftMouseDown={
+"deadzone": 0.5,
+"events": []
+}
+
 [rendering]
 
-environment/defaults/default_clear_color=Color(1, 0.301961, 0.301961, 0)
+environment/defaults/default_clear_color=Color(0.909804, 0, 0.14902, 0)
 viewport/transparent_background=true
