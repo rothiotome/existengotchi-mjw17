@@ -13,6 +13,6 @@ func _ready():
 func update_states(action_effects):
 	for n in action_effects:
 		states[n] = max(states[n] + action_effects[n], 0)
-		var texture_rect = get_node(n) as TextureRect
-		texture_rect.material.set_shader_parameter("current_val", states[n])
+		var state = get_node(n)
+		state.set_value(states[n])
 	states_updated.emit(states)

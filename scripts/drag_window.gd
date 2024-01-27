@@ -33,7 +33,7 @@ var actions: Dictionary = {
 }
 
 var ticks: Dictionary = {
-	"InnerThoughts": 1,
+	"InnerThoughts": 2,
 	"Overwhelmed": -1,
 	"FearDeath": 1,
 }
@@ -47,7 +47,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
 			following = true
-			dragging_start_position = get_local_mouse_position()
+			dragging_start_position = get_global_mouse_position()
 		if event.is_released():
 			following = false
 
@@ -96,4 +96,4 @@ func game_tick():
 	state_menu.update_states({random_tick: ticks[random_tick]})
 	await get_tree().create_timer((20 + randi_range(-20, 20))/speed_multiplier).timeout
 	game_tick()
-	
+

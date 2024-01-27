@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bc2uxg0f8xtlv"]
+[gd_scene load_steps=46 format=3 uid="uid://bc2uxg0f8xtlv"]
 
 [ext_resource type="Script" path="res://scripts/drag_window.gd" id="1_6xk3g"]
 [ext_resource type="Texture2D" uid="uid://co23j6v2y71vg" path="res://art/Screen.png" id="1_plqb4"]
@@ -11,6 +11,7 @@
 [ext_resource type="Shader" path="res://shaders/progress_bar.gdshader" id="4_xrqwi"]
 [ext_resource type="Texture2D" uid="uid://cvqdgurgg1hkw" path="res://art/ButtonPressed.png" id="4_yorv4"]
 [ext_resource type="Texture2D" uid="uid://biov067vi24yo" path="res://art/RightReleased.png" id="6_1xujt"]
+[ext_resource type="Script" path="res://scripts/state.gd" id="6_647pm"]
 [ext_resource type="Script" path="res://scripts/action_menu.gd" id="6_p1swq"]
 [ext_resource type="Texture2D" uid="uid://df7ham40ijue7" path="res://art/resize.png" id="6_xv50p"]
 [ext_resource type="Texture2D" uid="uid://ca0wwwjw1xx48" path="res://art/actions/WaxHeadsIcon.png" id="6_ykrpd"]
@@ -351,16 +352,19 @@ script = ExtResource("3_hysu4")
 material = SubResource("ShaderMaterial_nqr0b")
 layout_mode = 2
 texture = ExtResource("2_ufgsa")
+script = ExtResource("6_647pm")
 
 [node name="Overwhelmed" type="TextureRect" parent="Panel/StateMenu"]
 material = SubResource("ShaderMaterial_nd57g")
 layout_mode = 2
 texture = ExtResource("3_48uuk")
+script = ExtResource("6_647pm")
 
 [node name="FearDeath" type="TextureRect" parent="Panel/StateMenu"]
 material = SubResource("ShaderMaterial_1vt4l")
 layout_mode = 2
 texture = ExtResource("4_8u0cd")
+script = ExtResource("6_647pm")
 
 [node name="ActionMenu" type="HBoxContainer" parent="Panel"]
 unique_name_in_owner = true
@@ -446,7 +450,7 @@ script = ExtResource("7_ci1wg")
 unique_name_in_owner = true
 position = Vector2(246, 279)
 sprite_frames = SubResource("SpriteFrames_4u277")
-animation = &"Idle"
+animation = &"Compliment"
 autoplay = "Idle"
 script = ExtResource("20_iy2gj")
 
