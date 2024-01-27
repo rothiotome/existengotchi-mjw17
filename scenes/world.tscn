@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bc2uxg0f8xtlv"]
+[gd_scene load_steps=45 format=3 uid="uid://bc2uxg0f8xtlv"]
 
 [ext_resource type="Script" path="res://scripts/drag_window.gd" id="1_6xk3g"]
 [ext_resource type="Texture2D" uid="uid://co23j6v2y71vg" path="res://art/Screen.png" id="1_plqb4"]
@@ -27,17 +27,22 @@
 [ext_resource type="Texture2D" uid="uid://cyg81h0t2a0c7" path="res://art/animations/PlayWaxHeads.png" id="22_0ntd1"]
 [ext_resource type="Texture2D" uid="uid://3w8tkfl6fh7b" path="res://art/animations/ComplimentAnim.png" id="22_pdqil"]
 [ext_resource type="Texture2D" uid="uid://wudcloigy274" path="res://art/animations/LookOutWindow.png" id="22_ukfqp"]
+[ext_resource type="Texture2D" uid="uid://dsf113247hcgm" path="res://art/animations/FearDeath.png" id="23_r513t"]
+[ext_resource type="Texture2D" uid="uid://birv8pakp0pvb" path="res://art/animations/InnerThoughts.png" id="24_7ii7x"]
+[ext_resource type="Texture2D" uid="uid://dyd7j1vi5bh8t" path="res://art/animations/FearDeath2.png" id="24_t04sq"]
+[ext_resource type="Texture2D" uid="uid://bi5me3slc2sfo" path="res://art/animations/InnerThoughts2.png" id="25_ka4jr"]
+[ext_resource type="Texture2D" uid="uid://b7cf6qncnnbcr" path="res://art/animations/Overwhelmed.png" id="28_pkvg3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nqr0b"]
 shader = ExtResource("4_xrqwi")
 shader_parameter/min_val = null
-shader_parameter/current_val = 8.0
+shader_parameter/current_val = 0.0
 shader_parameter/max_val = 10.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nd57g"]
 shader = ExtResource("4_xrqwi")
 shader_parameter/min_val = null
-shader_parameter/current_val = 10.0
+shader_parameter/current_val = 0.0
 shader_parameter/max_val = 10.0
 
 [sub_resource type="Shader" id="Shader_g6oqu"]
@@ -80,7 +85,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1vt4l"]
 shader = SubResource("Shader_g6oqu")
 shader_parameter/min_val = null
-shader_parameter/current_val = 10.0
+shader_parameter/current_val = 0.0
 shader_parameter/max_val = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7eotl"]
@@ -132,6 +137,40 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("23_r513t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_r513t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_r513t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_r513t")
+}],
+"loop": true,
+"name": &"FearDeath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_t04sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t04sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t04sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t04sq")
+}],
+"loop": true,
+"name": &"FearDeath2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7eotl")
 }, {
 "duration": 1.0,
@@ -145,6 +184,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_7ii7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7ii7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7ii7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7ii7x")
+}],
+"loop": true,
+"name": &"InnerThoughts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ka4jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ka4jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ka4jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ka4jr")
+}],
+"loop": true,
+"name": &"InnerThoughts2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -179,6 +252,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"LookOutWindow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}],
+"loop": true,
+"name": &"Overwhelmed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pkvg3")
+}],
+"loop": true,
+"name": &"Overwhelmed2",
 "speed": 5.0
 }, {
 "frames": [{
@@ -339,10 +446,11 @@ script = ExtResource("7_ci1wg")
 unique_name_in_owner = true
 position = Vector2(246, 279)
 sprite_frames = SubResource("SpriteFrames_4u277")
-animation = &"Compliment"
+animation = &"Idle"
 autoplay = "Idle"
 script = ExtResource("20_iy2gj")
 
+[connection signal="states_updated" from="Panel/StateMenu" to="." method="_on_states_updated"]
 [connection signal="do_action" from="Panel/ActionMenu" to="." method="_on_action_menu_do_action"]
 [connection signal="pressed" from="Select" to="." method="_on_select_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

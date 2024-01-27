@@ -46,8 +46,6 @@ func on_button_clicked(action_type):
 			do_action.emit(current_highlighted_action)
 
 
-	
-	
 func get_texture_from_name(action_name):
 	if actions.has(action_name):
 		return get_child(actions.find(action_name)) as TextureRect
