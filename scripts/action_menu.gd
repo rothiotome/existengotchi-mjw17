@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+signal do_action(action_name)
+
 var actions: PackedStringArray
 
 var current_highlighted_action: String
@@ -20,10 +22,12 @@ func highlight_action(action_name):
 	var action_texture: TextureRect = get_texture_from_name(action_name)
 	action_texture.self_modulate.a = highlighted_alfa
 
+
 func remove_highlight_action(action_name):
 	if actions.has(action_name):
 		var action_texture: TextureRect = get_texture_from_name(action_name)
 		action_texture.self_modulate.a = faded_alfa
+
 
 func on_button_clicked(action_type):
 	match action_type:
@@ -39,10 +43,10 @@ func on_button_clicked(action_type):
 				return
 			highlight_action(actions[action_index - 1])
 		"select":
-			do_action(current_highlighted_action)
+			do_action.emit(current_highlighted_action)
 
-func do_action(action_name):
-	pass
+
+	
 	
 func get_texture_from_name(action_name):
 	if actions.has(action_name):

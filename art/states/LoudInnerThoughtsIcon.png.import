@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj0ol724jg74c"
-path="res://.godot/imported/Window.png-d16ba221c95060d714698e0b70d7cac0.ctex"
+uid="uid://d3vwtbyyaq4x7"
+path="res://.godot/imported/LoudInnerThoughtsIcon.png-bae2da17e17f5379bd75cf3f91e58116.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Window.png"
-dest_files=["res://.godot/imported/Window.png-d16ba221c95060d714698e0b70d7cac0.ctex"]
+source_file="res://art/states/LoudInnerThoughtsIcon.png"
+dest_files=["res://.godot/imported/LoudInnerThoughtsIcon.png-bae2da17e17f5379bd75cf3f91e58116.ctex"]
 
 [params]
 

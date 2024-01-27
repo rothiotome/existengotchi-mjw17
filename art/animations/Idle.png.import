@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvnljqs50ubku"
-path="res://.godot/imported/FearOfDeath.png-fe6665cbea0cbb5d73e38483b8409ef0.ctex"
+uid="uid://nta6cuic168r"
+path="res://.godot/imported/Idle.png-13e93276227795ffb8614b021dd37c9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FearOfDeath.png"
-dest_files=["res://.godot/imported/FearOfDeath.png-fe6665cbea0cbb5d73e38483b8409ef0.ctex"]
+source_file="res://art/animations/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-13e93276227795ffb8614b021dd37c9c.ctex"]
 
 [params]
 

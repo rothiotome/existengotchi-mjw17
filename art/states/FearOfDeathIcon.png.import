@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3vwtbyyaq4x7"
-path="res://.godot/imported/LoudInnerThoughts.png-a791f849b8eb68bce03a82375739ab30.ctex"
+uid="uid://bvnljqs50ubku"
+path="res://.godot/imported/FearOfDeathIcon.png-13df21483253bcac69eaa17e60be37cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/LoudInnerThoughts.png"
-dest_files=["res://.godot/imported/LoudInnerThoughts.png-a791f849b8eb68bce03a82375739ab30.ctex"]
+source_file="res://art/states/FearOfDeathIcon.png"
+dest_files=["res://.godot/imported/FearOfDeathIcon.png-13df21483253bcac69eaa17e60be37cf.ctex"]
 
 [params]
 

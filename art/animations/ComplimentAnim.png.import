@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l1tqr7wfjfyg"
-path="res://.godot/imported/Music.png-0458b7c2e54249a8972ee40af6c4fc32.ctex"
+uid="uid://3w8tkfl6fh7b"
+path="res://.godot/imported/ComplimentAnim.png-0d83d749581019ae220c20a155e846a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Music.png"
-dest_files=["res://.godot/imported/Music.png-0458b7c2e54249a8972ee40af6c4fc32.ctex"]
+source_file="res://art/animations/ComplimentAnim.png"
+dest_files=["res://.godot/imported/ComplimentAnim.png-0d83d749581019ae220c20a155e846a3.ctex"]
 
 [params]
 
