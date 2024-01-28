@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=46 format=3 uid="uid://bc2uxg0f8xtlv"]
-=======
-[gd_scene load_steps=75 format=3 uid="uid://bc2uxg0f8xtlv"]
->>>>>>> Stashed changes
+[gd_scene load_steps=80 format=3 uid="uid://bc2uxg0f8xtlv"]
 
 [ext_resource type="Script" path="res://scripts/drag_window.gd" id="1_6xk3g"]
 [ext_resource type="Texture2D" uid="uid://co23j6v2y71vg" path="res://art/Screen.png" id="1_plqb4"]
@@ -26,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://l1tqr7wfjfyg" path="res://art/actions/ListenMusicIcon.png" id="8_vvdv8"]
 [ext_resource type="Texture2D" uid="uid://cpsukwc0sdimj" path="res://art/LeftPressed.png" id="9_gf4wo"]
 [ext_resource type="Texture2D" uid="uid://daruhju1e8qfs" path="res://art/actions/ComplimentIcon.png" id="12_2joox"]
+[ext_resource type="FontFile" uid="uid://b7juqmmms7737" path="res://fonts/BornAddict.ttf" id="14_hvcav"]
 [ext_resource type="Texture2D" uid="uid://nta6cuic168r" path="res://art/animations/Idle.png" id="19_dllgi"]
 [ext_resource type="Script" path="res://scripts/existentialgotchi.gd" id="20_iy2gj"]
 [ext_resource type="Texture2D" uid="uid://dcrn6d378tb8v" path="res://art/animations/ListenMusic.png" id="20_l3r3b"]
@@ -449,6 +446,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_02q2w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Existentialgotchi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(243, 276)]
+}
+
+[sub_resource type="Animation" id="Animation_1gbse"]
+resource_name = "text_appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Existentialgotchi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(243, 276), Vector2(160, 276)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6cl3a"]
+_data = {
+"RESET": SubResource("Animation_02q2w"),
+"text_appear": SubResource("Animation_1gbse")
+}
+
 [node name="world" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -544,6 +578,18 @@ self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 texture = ExtResource("12_2joox")
 
+[node name="Label" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 155.0
+offset_top = 75.0
+offset_right = 338.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_hvcav")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 2
+
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(252, 297)
 texture = ExtResource("2_lv3vw")
@@ -590,16 +636,18 @@ script = ExtResource("7_ci1wg")
 
 [node name="Existentialgotchi" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(246, 279)
+position = Vector2(243, 276)
 sprite_frames = SubResource("SpriteFrames_4u277")
-<<<<<<< Updated upstream
 animation = &"Compliment"
-=======
-animation = &"FearDeath"
->>>>>>> Stashed changes
 autoplay = "Idle"
 frame_progress = 0.365438
 script = ExtResource("20_iy2gj")
+
+[node name="GlobalAnimPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_6cl3a")
+}
 
 [connection signal="states_updated" from="Panel/StateMenu" to="." method="_on_states_updated"]
 [connection signal="do_action" from="Panel/ActionMenu" to="." method="_on_action_menu_do_action"]
