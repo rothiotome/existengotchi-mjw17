@@ -11,11 +11,11 @@ var dragging_start_position: Vector2
 @onready var global_anim_player = %GlobalAnimPlayer
 
 
-var speed_multiplier: = 5
+var speed_multiplier: = 2
 
 
-const low_threshold := 4
-const high_threshold := 8
+const low_threshold := 3
+const high_threshold := 6
 
 var actions: Dictionary = {
 	"ListenMusic": {

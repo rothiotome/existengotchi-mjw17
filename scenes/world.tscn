@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://bc2uxg0f8xtlv"]
+[gd_scene load_steps=100 format=3 uid="uid://bc2uxg0f8xtlv"]
 
 [ext_resource type="Script" path="res://scripts/drag_window.gd" id="1_6xk3g"]
 [ext_resource type="Texture2D" uid="uid://co23j6v2y71vg" path="res://art/Screen.png" id="1_plqb4"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://biov067vi24yo" path="res://art/RightReleased.png" id="6_1xujt"]
 [ext_resource type="Script" path="res://scripts/state.gd" id="6_647pm"]
 [ext_resource type="Script" path="res://scripts/action_menu.gd" id="6_p1swq"]
-[ext_resource type="Texture2D" uid="uid://df7ham40ijue7" path="res://art/resize.png" id="6_xv50p"]
+[ext_resource type="Texture2D" uid="uid://df7ham40ijue7" path="res://art/Resize.png" id="6_xv50p"]
 [ext_resource type="Texture2D" uid="uid://ca0wwwjw1xx48" path="res://art/actions/WaxHeadsIcon.png" id="6_ykrpd"]
 [ext_resource type="Script" path="res://Scripts/resize.gd" id="7_ci1wg"]
 [ext_resource type="Texture2D" uid="uid://dj0ol724jg74c" path="res://art/actions/WindowIcon.png" id="7_in6r8"]
@@ -31,7 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://wudcloigy274" path="res://art/animations/LookOutWindow.png" id="22_ukfqp"]
 [ext_resource type="Texture2D" uid="uid://dsf113247hcgm" path="res://art/animations/FearDeath.png" id="23_r513t"]
 [ext_resource type="Texture2D" uid="uid://birv8pakp0pvb" path="res://art/animations/InnerThoughts.png" id="24_7ii7x"]
+[ext_resource type="Texture2D" uid="uid://g5lqytghy43h" path="res://art/Reset.png" id="24_kcad4"]
 [ext_resource type="Texture2D" uid="uid://dyd7j1vi5bh8t" path="res://art/animations/FearDeath2.png" id="24_t04sq"]
+[ext_resource type="Script" path="res://scripts/restart.gd" id="25_8jfu1"]
 [ext_resource type="Texture2D" uid="uid://bi5me3slc2sfo" path="res://art/animations/InnerThoughts2.png" id="25_ka4jr"]
 [ext_resource type="Texture2D" uid="uid://b7cf6qncnnbcr" path="res://art/animations/Overwhelmed.png" id="28_pkvg3"]
 [ext_resource type="Texture2D" uid="uid://dgpuan3l0r6tw" path="res://art/animations/Overwhelmed2.png" id="31_b7kmt"]
@@ -48,45 +50,8 @@ shader_parameter/min_val = null
 shader_parameter/current_val = 0.0
 shader_parameter/max_val = 10.0
 
-[sub_resource type="Shader" id="Shader_g6oqu"]
-code = "shader_type canvas_item;
-
-uniform float min_val;
-uniform float current_val;
-uniform float max_val;
-
-/*
-	linear normalization from one range to another
-*/
-float linear(float old_min, float old_max, float new_min, float new_max, float current) {
-	float old_range = (old_max - old_min);
-	float new_range = (new_max - new_min);
-	float new_val = (((current - old_min) * new_range) / old_range ) + new_min;
-	return new_val;
-}
-
-void fragment() {
-	vec4 color = COLOR;
-	
-	float normalized = linear(max_val, min_val, 0.0, 1.0, current_val);
-	
-	/*
-	If the fragcoord.x is less than or equal to the calculated point
-	between min and max that current_value falls on, mix with our
-	fill color
-	*/
-	if (UV.y <= normalized) {
-		if(color.a > 0.4f)
-		{
-			color.a = 0.1f;
-		}
-	}
-	
-	COLOR = color;
-}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1vt4l"]
-shader = SubResource("Shader_g6oqu")
+shader = ExtResource("4_xrqwi")
 shader_parameter/min_val = null
 shader_parameter/current_val = 0.0
 shader_parameter/max_val = 10.0
@@ -576,13 +541,28 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_6xk3g")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.5
+offset_top = -23.0
+offset_right = 225.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "A game by Rothio Tome and Murray Somerwolff for MJW17"
+
 [node name="Screen" type="Sprite2D" parent="."]
-position = Vector2(254, 278)
+position = Vector2(247, 281)
 texture = ExtResource("1_plqb4")
 
 [node name="Panel" type="Panel" parent="."]
@@ -593,9 +573,8 @@ anchor_left = 0.158
 anchor_top = 0.227
 anchor_right = 0.852
 anchor_bottom = 0.698
-offset_top = -0.200012
-offset_right = -3.05176e-05
-offset_bottom = 0.199982
+offset_top = 0.259995
+offset_bottom = -16.76
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -679,7 +658,7 @@ theme_override_font_sizes/font_size = 25
 autowrap_mode = 2
 
 [node name="Body" type="Sprite2D" parent="."]
-position = Vector2(252, 297)
+position = Vector2(250, 302)
 texture = ExtResource("2_lv3vw")
 
 [node name="Select" type="TextureButton" parent="."]
@@ -721,6 +700,15 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 texture_normal = ExtResource("6_xv50p")
 script = ExtResource("7_ci1wg")
+
+[node name="Resize2" type="TextureButton" parent="."]
+layout_mode = 1
+offset_right = 55.0
+offset_bottom = 55.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("24_kcad4")
+script = ExtResource("25_8jfu1")
 
 [node name="Existentialgotchi" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

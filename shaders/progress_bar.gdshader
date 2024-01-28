@@ -17,7 +17,7 @@ void fragment() {
 	float normalized = linear(max_val, min_val, 0.0, 1.0, current_val);
 	
 	if (UV.y <= normalized) {
-		if(color.a > 0.4f)
+		if(color.a > 0.2f)
 		{
 			color.a = 0.1f;
 		}
